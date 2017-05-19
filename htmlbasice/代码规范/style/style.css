@@ -1,0 +1,305 @@
+@charset "utf-8";
+/*清空所有HTML标签的外间距和内间距,*/
+* {
+	padding: 0;
+	margin: 0;
+}
+/*避免padding 属性对页面元素最终宽度的计算*/
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+/*设置页面基本属性，包括获取字号，颜色，字体*/
+body {
+	min-width:1000px;
+	font-size: 100%;
+	color: #333;
+	font-family: "微软雅黑", serif;
+	background: #fff;
+}
+/*规定链接文字颜色*/
+a {
+	text-decoration: none;
+	color: #333;
+}
+em, i {
+	font-style: normal;
+}
+/*清空列表list-style属性，去掉前标*/
+
+
+/*清空浮动溢出*/
+.clearfix {
+ *zoom: 1;
+	clear: both;
+}
+.clearfix:after {
+	display: table;
+	content: "";
+	clear: both;
+}
+strong {
+	font-weight: normal;
+	color: #E40B0F;
+}
+header {
+	width: 100%;
+	height: 380px;
+	color: #fff;
+	background: url(../images/code.png) center 40px no-repeat #5B7AB0;
+	text-align: center;
+}
+h1 {
+	line-height: 140px;
+	text-align: center;
+	font-weight: normal;
+	padding-top: 90px;
+	height: 190px;
+}
+h2 {
+	line-height: 60px;
+	font-size: 28px;
+	font-weight: normal;
+}
+header p {
+	color: #ccc;
+}
+header span {
+	display: inline-block;
+	width: 100px;
+	height: 60px;
+	overflow: hidden;
+	line-height: 999px;
+	margin-top: 30px;
+}
+header span.zbx-comp {
+	background: url(../images/logo.png) center no-repeat;
+}
+header span.zbx-large-client {
+	background: url(../images/logo2.png) center no-repeat;
+}
+/*目录*/
+nav {
+	width: 100%;
+	margin: 0 auto;
+	background: #EAEAEA;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+nav .nav-cont {
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+	height: 480px;
+}
+h2 {
+	background: url(../images/icon.png) left center no-repeat;
+	text-indent: 30px;
+}
+nav h2, nav ul {
+	margin: 10px auto;
+	list-style: inside;
+	list-style-type: disc;
+}
+nav h2 {
+	width: 80%;
+}
+nav ul {
+	width: 33%;
+}
+nav ul.gf1 {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+nav ul.gf2 {
+	position: absolute;
+	left: 36%;
+	top: 0;
+}
+nav ul.gf3 {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+nav li.nav-title {
+	font-weight: bold;
+	line-height: 46px;
+	list-style: none;
+	text-indent: 0px;
+}
+nav li {
+	font-size: 1.2em;
+	line-height: 32px;
+	text-indent: 20px;
+}
+nav a {
+	color: #240345;
+}
+nav a:hover {
+	background: #69c;
+	color: #fff;
+}
+article {
+	width: 80%;
+	margin: 20px auto;
+}
+/*列表内容标题*/
+article h3 {
+	width: 95%;
+	line-height: 60px;
+	font-size: 24px;
+	font-weight: normal;
+	background: url(../images/d.png) left center no-repeat;
+	text-indent: 20px;
+	margin: 0 auto;
+}
+article h4 {
+	width: 95%;
+	color:#444;
+	line-height: 60px;
+	font-size: 20px;
+	font-weight: normal;
+	background: url(../images/d.png) left center no-repeat;
+	text-indent: 36px;
+	margin: 0 auto;
+}
+aside abbr{display:block; text-indent:36px; color:#784142; font-size:0.8em;}
+aside.now {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px;
+	background: #fff;
+	z-index: 2;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+	-moz-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+}
+#mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #222;
+	opacity: .8;
+	z-index: 1;
+	cursor: pointer;
+}
+#close {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 53px;
+	height: 53px;
+	display: block;
+	cursor: pointer;
+	z-index: 999;
+	background: url(../images/close.png) no-repeat;
+}
+aside.now h3 {
+	color: #333;
+}
+/*列表内容副标题*/
+article h3 em {
+	font-size: .6em;
+	color: #333;
+	padding-left: 30px;
+}
+aside.now h3 em {
+	color: #666;
+}
+article p {
+	position: relative;
+	width: 90%;
+	border: 1px solid #ddd;
+	background: #eee;
+	color: #666;
+	padding: 20px;
+	padding-bottom: 24px;
+	line-height: 24px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	margin: 0 auto;
+}
+article table {
+	background: #ddd;
+	width: 90%;
+	overflow:hidden;
+	margin: 0 auto;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+article tr {
+	background: #eee;
+}
+article td {
+	line-height: 38px;
+	text-indent: 12px;
+}
+article .title td {
+	font-weight: bold;
+	text-align: center;
+	text-indent: 0;
+}
+/*描述文字中需要强调的部分，如 属性 或者 名称*/
+article p i {
+	color: #6621C7;
+}
+article pre {
+	display: block;
+	color: #9849DC;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	width: 90%;
+	margin: 20px auto;
+	margin-bottom: 0px;
+}
+foot {
+	background: #eaeaea;
+	margin-top: 30px;
+}
+foot p {
+	text-align: center;
+	font-size: 0.8em;
+	color: #666;
+	line-height: 100px;
+}
+.go_top {
+	display: block;
+	width: 60px;
+	height: 60px;
+	background: url(../images/rtop.png) center no-repeat #0CF;
+	position: fixed;
+	_position: absolute;
+	right: 5px;
+	bottom: 80px;
+	display: none;
+	color: #fff;
+	text-align: center;
+	line-height: 60px;
+	font-size: 18px;
+	font-weight: bold;
+	border-radius: 5px;
+	-mo-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	cursor: pointer;
+}
+a.go_top:hover {
+	background-color: #669;
+}

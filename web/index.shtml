@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Front End Development</title>
+
+<link href="style/font.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+</head>
+
+<body class="full-bg">
+<div class="main">
+  <div class="stage left">
+    <div class="container color-blue">
+      <h1>Public<br>Methods</h1>
+    </div>
+  </div>
+  <div class="stage center">
+    <div class="container logo">
+      <h1><a href="filter.html">Front End<br>Development</a></h1>
+    </div>
+  </div>
+  <div class="stage right">
+    <div class="container color-blue">
+      <h1>Common<br>Components</h1>
+    </div>
+  </div>
+</div>
+<div class="mask"></div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+// filter JSON 
+
+{
+	"pageTitle": "filter",
+	"description": "drld",
+	"items": [
+	{
+		"title":"filter name",
+		"val":"1",
+	},
+	{
+		"title":"filter name",
+		"val":"1",
+	},
+	{
+		"title":"filter name",
+		"val":"1",
+	},
+	{
+		"title":"filter name",
+		"val":"1",
+	},
+}

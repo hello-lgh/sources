@@ -1,0 +1,91 @@
+@charset "utf-8";
+/*表单样式*/
+.form_cont{display:block; width:45%; position:relative; float:left;}
+.form_cont2{display:block; width:100%; position:relative; float:left;}
+.form_cont span,
+.form_cont2 span{display:block; line-height:44px; font-size:15px; text-indent:4px; color:#888;}
+.form_cont div{*zoom: 1;clear:both; position:relative;}
+.form_cont div:after {display: table; content: ""; clear: both;}
+/*校验相关*/
+.form_cont .suc{display:block; width:16px; height:28px; background:url(http://www2.jinmajia.com/lyzt/2016/08/message/images/suc.png) center no-repeat; position:absolute; right:-24px; top:0;}
+.form_cont .err{display:block; width:100%;  position:absolute; right:0; top:-34px;   min-height:28px; color:#f00; text-decoration:underline; font-size:12px; text-align:right; z-index:999; padding:0; overflow-x:hidden ; line-height:28px;}
+
+/*下拉框样式*/
+.select{background:#fff; height:28px; box-shadow:0 0 6px #ddd; position:relative;}
+.boder{border-radius:1px;  border:1px solid #A9A9A9; overflow:hidden;}
+.select .form_minSelect{border:none; width:90px; background:#efefef;  height:28px; line-height:28px; position:absolute; top:0; left:0; font-size:.9em; color:#666; text-indent:12px;}
+.select .form_minSelect option{display:block;  line-height:28px; height:28px; text-align:center;  text-indent:5px;}
+.select .form_selectInput{width:100%; border:none; line-height:28px; height:28px; text-indent:100px; font-size:.9em; color:#666;}
+.form_input{width:100%; border:none; line-height:28px; height:28px; text-indent:5px; font-size:.8em; color:#666;}
+.form_select{background:#fff; height:28px; width:100%;  box-shadow:0 0 6px #ddd;  font-size:.8em; color:#666; text-indent:5px; border:none;}
+
+/*获取密码*/
+.text{line-height:26px; width:100%; position:relative;}
+.text em{display:block; color:#990; display:none; font-style:normal; margin-left:10px; font-size:12px;  width:94%; overflow:hidden; height:26px;}
+.text a.getpsd{display:block; background:url(http://www2.jinmajia.com/lyzt/2016/08/message/images/psd.png) 5px center no-repeat; color:#69c; text-decoration:underline; text-indent:32px; cursor:pointer; width:100px; overflow:hidden;}
+.text em.show{position:absolute; top:0; left:0; height:90px; background:#fff; overflow:auto; word-break:break-all; white-space:pre-wrap; line-height:18px; z-index:666; padding:5px; box-shadow:0 0 10px #ccc;}
+/*输入框样式*/
+.form_input{background:#fff; height:28px; width:100%;  box-shadow:0 0 6px #ddd;  font-size:.8em; color:#666; text-indent:5px; border-radius:1px;  border:1px solid #A9A9A9; overflow:hidden;}
+textarea{background:#fff; width:100%;  box-shadow:0 0 6px #ddd;  font-size:.9em; color:#666; border-radius:2px;  border:1px solid #A9A9A9; min-height:56px; line-height:24px; text-indent:5px;}
+
+/*日期区间样式*/
+.timepicker .form_input{width:45%; display:block; float:left;}
+.timepicker .mr{float:right;}
+
+/*增加按钮*/
+a.addnew{display:inline-block; color:#69c; background:url(http://www2.jinmajia.com/lyzt/2016/08/message/images/add.png) 5px center no-repeat; text-indent:24px; font-size:.9em; line-height:36px; width:60px; cursor:pointer;}
+a.jian{display:inline-block; color:#69c; background:url(http://www2.jinmajia.com/lyzt/2016/08/message/images/none.png) 5px center no-repeat; text-indent:24px; font-size:.9em; line-height:36px; width:60px; cursor:pointer;}
+/*单选复选按钮*/
+.radioList{background:#fff; height:28px; width:100%;}
+.checkbox-xlarge,.radio-xlarge{border:1px solid #999; border-radius:2px; -mo-border-radius: 2px;  -webkit-border-radius: 2px; margin-left:10px; margin-right:10px; display:inline-block; margin-top:5px;   cursor:pointer;display:inline-block; }
+.radioList label{display:inline-block; color:#666; line-height:28px;}
+.radioList .form_input{width:180px; margin-left:10px; display:inline-block;}
+
+/*UL表格*/
+.table{position:relative;}
+.table tr{line-height:38px; font-size:12px;}
+.table td{border-right:1px solid #ddd; border-bottom:1px solid #ddd; text-align:center;}
+.table td.none{border-right:none;}
+.table tr:hover{background:#eee;}
+.table tr.title,
+.table td.title,
+.table tr.title:hover{background:#F1F1F1; text-align:center; font-size:.9em; color:#777;}
+.table em{display:block; font-size:12px; line-height:16px; font-style:normal;}
+
+.msgInfoList{text-align:left; padding-left:.9em; position:relative;background:#fff; padding:10px;}
+.msgInfoList p{padding-right:40px; line-height:24px;}
+.table td.abstract{text-align:left; text-indent:12px;}
+.msgInfoList i{display:inline-block; margin-right:10px; min-width:80px; font-style:normal;}
+.msgInfoList i:hover{font-weight:bold;}
+.msgInfoList .listType{border-bottom:1px solid #ccc; line-height:24px; height:24px; text-align:left; margin-bottom:10px;}
+.msgInfoList .listType a{display:inline-block; width:34px; color:#333; cursor:pointer;text-align:center;}
+.msgInfoList .listType a.now{background:#ccc; color:#333;}
+
+
+a.blue{color:#06C; text-decoration:underline; cursor:pointer;}
+a.red{color:#960; cursor:pointer; font-weight:bold;}
+
+/*按钮*/
+.form_btn{display:block; width:100%; padding-top:20px; text-align:center; border-top:1px dashed #ddd; margin-top:30px; float:left;}
+.form_btn2{display:block; width:100%; padding-top:20px; text-align:center; border-top:1px dashed #ddd; margin-top:30px; float:left;}
+.page_btn{display:block; width:100%; padding-top:10px; text-align:center; border-top:1px solid #ddd;}
+.btn{ border-radius:2px; -mo-border-radius: 2px;  -webkit-border-radius: 2px; border:1px solid #666; text-align:center; min-width:80px; line-height:28px; min-height:28px; padding-left:10px; padding-right:10px; text-indent:0px; font-size:.85em; background:#eaeaea; cursor:pointer;}
+
+.btn-s{ border-radius:2px; -mo-border-radius: 2px;  -webkit-border-radius: 2px; border:1px solid #ddd; text-align:center; min-width:60px; line-height:24px; min-height:24px; padding-left:10px; padding-right:10px; text-indent:0px; margin-right:10px; font-size:12px; background:#eaeaea; cursor:pointer; color:#666;}
+
+.btn-b{ border-radius:2px; -mo-border-radius: 2px;  -webkit-border-radius: 2px; border:1px solid #666; text-align:center; min-width:120px; line-height:48px; min-height:48px; padding-left:10px; padding-right:10px; text-indent:0px; margin-right:10px; font-size:16px; background:#eaeaea; cursor:pointer;}
+
+.btn:hover{background:#ddd;}
+.btn-primary{color:#fff;background-color:#199ED8; border:1px solid #09C;}
+.btn-org{color:#333; text-shadow:0 -1px 0 #ccc;background-color:#fff; border:1px solid #dadada;}
+.btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active,.btn-primary.disabled,.btn-primary[disabled]{color:#fff;background:#069;}
+.btn-primary:active,.btn-primary.active{background-color:#039 \9}
+
+.btn-org:hover,.btn-org:focus,.btn-org:active,.btn-org.active,.btn-org.disabled,.btn-org[disabled]{color:#fff;background:#777;}
+.btn-org:active,.btn-org.active{background-color:#777;}
+
+.btn-primary-b{color:#fff; text-shadow:0 -1px 0 #09C;background-color:#69F; border:1px solid #09C; font-weight:bold; font-size:16px;}
+.btn-primary-b:hover,.btn-primary-b:focus,.btn-primary-b:active,.btn-primary-b.active,.btn-primary-b.disabled,.btn-primary-b[disabled]{color:#fff;background-color:#069;}
+.btn-primary-b:active,.btn-primary-b.active{background-color:#039;}
+
+

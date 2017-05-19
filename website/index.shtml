@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Full screen carousel figure</title>
+<link href="style/font.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</head>
+
+<body>
+<div class="main full-bg">
+  <div class="mask"></div>
+  <video preload="auto" autoplay loop poster="images/background-poster.png">
+			<source src="images/main-video.webm" type="video/webm" id="video">
+			<source src="images/main-video.mp4" type="video/mp4" id="video2">
+		</video>
+  <div class="logo"> Full screen carousel figure <abbr>what a fuck day</abbr> </div>
+  <div class="menu">
+    <ul>
+      <li class="videoBtn" v-type="0">Change background</li>
+      <li>About me</li>
+    </ul>
+  </div>
+  <div class="indexCont">
+    <ul id="cont">
+      <li>
+        <div class="cont"><span><img src="images/cybizhi2013_0014.jpg"></span>
+          <div class="txt">
+            <h2>Taraxacum mongolicum Hand. -Mazz.</h2>
+            <p>Pale purple dandelion, means "Purple Legend", a legend of love alone. Legend who can find purple</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="cont"><span><img src="images/cybizhi2012_0290.jpg"></span>
+          <div class="txt">
+            <h2>Pharbitis nil(L.)  Choisy  Morning glory</h2>
+            <p>Morning glory is a kind of plant flower resembles a horn shaped, so some places call it trumpetflower. Planting flowers in the spring sowing.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="cont"><span><img src="images/wallpaper-628950.jpg"></span>
+          <div class="txt">
+            <h2>Gărâna Jazz Festival 2016</h2>
+            <p>the man who created a kind of pyramid of in modern times Illustration for the novel to be published every day in the newspaper.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="cont"><span><img src="images/wallpaper-2587944.jpg"></span>
+          <div class="txt">#FFFFFF
+            <h2>Pure girl mongolicum Hand. obscure</h2>
+            <p>Sentimental than wisdom less clever than beautiful and less beautiful, more elegant than rude, perhaps occasionally Maoshoumaojiao, a small action. Is not the simple</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="cont"><span><img src="images/wallpaper-2587945.jpg"></span>
+          <div class="txt">
+            <h2>The man who made the "Kurobe Dam"</h2>
+            <p>Project for the 20th edition of GJF2016 Together with 72 Photographs by Claudiu and Horatiu Stationaries by Fabrik</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="cont"><span><img src="images/wallpaper-2587946.jpg"></span>
+          <div class="txt">
+            <h2>Sweet wine And Coca Cola. so Cool</h2>
+            <p>Sentimental than wisdom less clever than beautiful and less beautiful, more elegant than rude, perhaps occasionally Maoshoumaojiao, a small action. Is not the simple</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="movieClip"></div>
+</div>
+</body>
+</html>

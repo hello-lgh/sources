@@ -1,0 +1,1 @@
+outPut system message: it's a nice day!

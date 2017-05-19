@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>产权交易服务云平台</title>
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link href="style/style.css" rel="stylesheet" type="text/css">
+<link href="style/form.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="style/jquery.datetimepicker.css"/>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<!--HTML5元素支持-->
+<!--[if lt IE 9]>
+	<script src="/js/html5shiv.min.js"></script>
+	<script src="/js/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+<article>
+  <style>
+  	.process{padding-bottom:30px;}
+	.process p{border:1px solid #E4E4E4; display:block; line-height:180%; font-size:.75em; padding:12px; color:#999; }
+	.process strong{display:block;}
+	.processBox{background:#fff; border:1px solid #E4E4E4; min-height:300px; float:left; width:100%; position:relative;}
+	.processAdd{width:79px; height:59px; border:2px dashed #ccc; background:url(images/u211.png) center #f2f2f2 no-repeat; float:left; cursor:pointer; border-radius:5px; margin-left:30px; margin-top:30px;}
+	.processView{width:80px; height:60px; border:1px solid #ccc; background:#f2f2f2; float:left;  cursor:pointer; border-radius:5px; position:relative; margin-left:30px; margin-top:30px;}
+	.processView abbr{font-size:.8em; font-weight:bold; display:block; width:100%; text-align:center; padding-top:12px;}
+	.processView a.del{display:block; position:absolute; background:url(images/u206.png) no-repeat; width:20px; height:20px; display:none; cursor:pointer; top:-10px; right:-10px;}
+	.processView i{font-size:.7em; font-style:normal; display:block; width:100%; text-align:center;}
+	.processAlert{width:516px; height:300px; border:1px solid #e4e4e4; background:#fff; display:none; position:absolute; z-index:999; left:50%; top:50%; margin-top:-150px; margin-left:-258px;}
+	.processAlert .clearfix{margin:15px;}
+	.fr{float:right;}
+	.mask{position:absolute; left:0; top:0; z-index:998; background:#fff; opacity:.5; width:100%; height:100%;}
+</style>
+  <script>
+  	
+	$(function(){
+		var num=0;//初始化一个常量
+		var $processAdd=$(".processAdd");
+		var mask="<div class='mask'></div>";//增加遮罩层
+		var $processAlert=$(".processAlert");
+		var nowx,title,title2,tj,time,type,obj;
+		//增加流程节点事件
+		$processAdd.on("click",function(){
+			type="add";
+			newProcess();	
+			alertShow();
+		});
+		function alertShow(){
+			$("body").append(mask);
+			$processAlert.show();	
+		}
+		//重置流程节点窗体的val
+		function newProcess(){
+			$("#processName").val("");
+			$("#processFs").val("");
+			$("#processTj").val("设置条件");
+			$("#processSj").val("输入时间");
+		}
+		//隐藏增加流程节点窗体
+		function hideNewProcess(){
+			$processAlert.hide();
+			$(".mask").remove();	
+		}
+		//弹窗取消按钮响应事件
+		$("#cancel").on("click",function(){
+			hideNewProcess();
+		});
+		//弹窗保存按钮响应事件
+		$("#preservation").on("click",function(){
+			title=$("#processName").find("option:selected").text();//流程名称的值 
+			title2=$("#processFs").find("option:selected").text();//处理方式的
+			tj=$("#processTj").val();// 流程控制设置
+			time=$("#processSj").val();//流程周期最大时间
+			
+			//判断是新增还是修改
+			if(type=="add"){
+				addView(title,title2,tj,time);
+			}else{
+				edit(obj,title,title2,tj,time);
+			}
+			hideNewProcess();
+		});
+
+		//构造新节点并显示出来
+		var name="processView";//新节点增加ID
+		function addView(_title,_title2,_tj,_time){
+			var now_name=name+num;
+			$processAdd.before("<div class='processView' data-tj='"+_tj+"' data-time='"+_time+"' id='"+now_name+"'><abbr>"+_title+"</abbr><i>"+_title2+"</i><a class='del'></a></div>");
+			num++;
+			$("#"+now_name).live("click",function(){
+				var a=$(this).children("abbr").html();
+				var b=$(this).children("i").html();
+				var c=$(this).attr("data-time");
+				var d=$(this).attr("data-tj");
+				obj=$(this);
+				getData(a,b,c,d);	
+			})
+			$("#"+now_name).live("mouseover",function(){
+				$(this).children("a.del").show();	
+			})
+			$("#"+now_name).live("mouseleave",function(){
+				$(this).children("a.del").hide();	
+			})
+			$("#"+now_name+" a.del").live("click",function(){
+				$(this).parent(".processView").remove();
+			})
+		}
+		//在弹出窗反显当前节点值
+		function getData(a,b,c,d){
+			$("#processName").find("option[text='"+a+"']").attr("selected",true);
+			$("#processFs").find("option[text='"+b+"']").attr("selected",true);
+			$("#processTj").val(c);
+			$("#processSj").val(d);	
+			type="edit";
+			alertShow();		
+		}
+		//修改当前节点值
+		function edit(_obj,_title,_title2,_tj,_time){			
+			_obj.children("abbr").html(_title);	
+			_obj.children("i").html(_title2);			
+			_obj.attr("data-time",_time);
+			_obj.attr("data-tj",_tj);
+		}
+		$("#saveProcess").click(function(){
+			if($(".processBox .processView").length>0){
+				var _str="{ processName:"+"'"+$("#processText").val()+"',";
+				$(".processBox .processView").each(function() {
+					_str+="(";
+					_str+="name:"+"'"+$(this).children("abbr").html()+"'";
+					_str+=" mode:"+"'"+$(this).children("i").html()+"'";
+					_str+=" time:"+"'"+$(this).attr("data-time")+"'";
+					_str+=" condition:"+"'"+$(this).attr("data-tj")+"'";
+					_str+="),";
+				});	
+				_str+="}";
+				alert(_str);
+			}else{
+				alert("请增加流程节点，完成设置");	
+			}
+		});
+	});
+</script>
+  <div class="main">
+    <div class="main_title">
+      <h1 class="clearfix"><abbr data-m="1" data-l="0" id="text">新增流程</abbr></h1>
+    </div>
+    <div class="process">
+      <p> <strong>流程管理设置</strong> 1 创建并且选择流程节点 2 设置流程运转条件 3 设置运转处理方式  4 设置流程最大周期<br>
+        <strong>删除流程</strong> 必须从流程最后节点开始删除 </p>
+      <form action="">
+        <div class="mt20 clearfix">
+          <div class="form_cont2">
+            <input type="text" class="form_input" value="请输入流程名称" id="processText">
+          </div>
+          <div class="mt20 processBox">
+            <div class="processAdd"></div>
+          </div>
+          <div class="form_btn mt20">
+            <button type="button" class="btn btn-org">暂存</button>
+            <button type="button" class="btn btn-primary" id="saveProcess">保存</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="processAlert">
+      <div class="clearfix">
+        <div class="form_cont2 boder">
+          <select class="form_select" id="processName">
+            <option value="1">登记</option>
+            <option value="2">评估</option>
+            <option value="3">审批</option>
+            <option value="4">公告</option>
+            <option value="5">挂牌</option>
+            <option value="6">交易</option>
+            <option value="7">清算</option>
+          </select>
+        </div>
+        <div class="form_cont"> <span>流程控制设置</span>
+          <div class="select">
+            <input type="text" class="form_input" placeholder="不作控制" id="processTj">
+          </div>
+        </div>
+        <div class="form_cont fr"> <span>处理方式</span>
+          <div class="select boder">
+            <select class="form_select" id="processFs">
+              <option value="1">下一流程</option>
+              <option value="2">暂停流程</option>
+              <option value="3">结束流程</option>
+            </select>
+          </div>
+        </div>
+        <div class="form_cont"> <span>流程周期最大时间</span>
+          <div class="select">
+            <input type="text" class="form_input" placeholder="2017-05-10" id="processSj">
+          </div>
+        </div>
+        <div class="form_btn mt20">
+          <button type="button" class="btn btn-org" id="cancel">取消</button>
+          <button type="button" class="btn btn-primary" id="preservation" data-type="add">保存</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+</body>
+</html>
